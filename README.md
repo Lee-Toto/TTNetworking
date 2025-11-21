@@ -22,7 +22,7 @@ pod 'TTNetworking'
 
 ## Author
 
-Lee-Toto, junliang.li@nx-engine.com
+Lee-Toto
 
 ## License
 
