@@ -24,19 +24,43 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/Lee-Toto/TTNetworking'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Lee-Toto' => 'junliang.li@nx-engine.com' }
+  s.author           = { 'Lee-Toto' => 'daly97@126.com' }
   s.source           = { :git => 'https://github.com/Lee-Toto/TTNetworking.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '13.0'
-
-  s.source_files = 'TTNetworking/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'TTNetworking' => ['TTNetworking/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.swift_version = '5.0'
+  s.ios.deployment_target = '12.0'
+  
+  s.default_subspec = 'Core'
+  
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'TTNetworking/Classes/Core/**/*'
+  end
+  
+  s.subspec 'Captcha' do |ss|
+    ss.dependency 'CryptoSwift'
+    ss.dependency 'TTNetworking/Core'
+    ss.source_files = 'TTNetworking/Classes/Captcha/**/*'
+    ss.resource_bundles = {
+      'TTNetworking' => ['TTNetworking/Assets/*.xcassets']
+    }
+  end
+  
+  s.subspec 'ObjectMapper' do |ss|
+    ss.dependency 'TTNetworking/Core'
+    ss.source_files = 'TTNetworking/Classes/ObjectMapper/**/*'
+    ss.dependency 'ObjectMapper'
+  end
+  
+  s.subspec 'SmartCodable' do |ss|
+    ss.dependency 'TTNetworking/Core'
+    ss.source_files = 'TTNetworking/Classes/SmartCodable/**/*'
+    ss.dependency 'SmartCodable'
+  end
+  
+  s.dependency 'Moya/RxSwift'
+  s.dependency 'RxRelay'
+  s.dependency 'CryptoSwift'
+  
+  s.static_framework = true
 end

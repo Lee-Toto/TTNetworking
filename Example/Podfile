@@ -3,8 +3,13 @@ use_frameworks!
 platform :ios, '13.0'
 
 target 'TTNetworking_Example' do
-  pod 'TTNetworking', :path => '../'
-
+#  pod 'TTNetworking', :path => '../'
+#  pod 'TTNetworking/ObjectMapper', :path => '../'
+  pod 'TTNetworking/SmartCodable', :path => '../'
+  pod 'TTNetworking/Captcha', :path => '../'
+  
+  pod 'NSObject+Rx'
+  
   post_install do |installer|
        installer.generated_projects.each do |project|
          project.targets.each do |target|

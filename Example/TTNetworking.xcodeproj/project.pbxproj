@@ -14,6 +14,10 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9333344CE91E8DC544CA3890 /* Pods_TTNetworking_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36112952DE90EF5DF4067A5 /* Pods_TTNetworking_Example.framework */; };
+		9B2515092ED06E7D00F09B13 /* Appdelegate+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2515072ED06E7D00F09B13 /* Appdelegate+Request.swift */; };
+		9B25150A2ED06E7D00F09B13 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2515082ED06E7D00F09B13 /* CustomError.swift */; };
+		9B25150B2ED06E7D00F09B13 /* DemoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2515052ED06E7D00F09B13 /* DemoService.swift */; };
+		9B25150E2ED070B500F09B13 /* DemoSmartCodableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B25150D2ED070B500F09B13 /* DemoSmartCodableModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +43,14 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		650E466E752C8C3673238442 /* Pods-TTNetworking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTNetworking_Example.release.xcconfig"; path = "Target Support Files/Pods-TTNetworking_Example/Pods-TTNetworking_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A2034D166782F645B01D4500 /* TTNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TTNetworking.podspec; path = ../TTNetworking.podspec; sourceTree = "<group>"; };
-		E1FF43607C55A2123FB0E17E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		9B2515052ED06E7D00F09B13 /* DemoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoService.swift; sourceTree = "<group>"; };
+		9B2515072ED06E7D00F09B13 /* Appdelegate+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appdelegate+Request.swift"; sourceTree = "<group>"; };
+		9B2515082ED06E7D00F09B13 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		9B25150D2ED070B500F09B13 /* DemoSmartCodableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSmartCodableModel.swift; sourceTree = "<group>"; };
+		A2034D166782F645B01D4500 /* TTNetworking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TTNetworking.podspec; path = ../TTNetworking.podspec; sourceTree = "<group>"; };
+		E1FF43607C55A2123FB0E17E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E36112952DE90EF5DF4067A5 /* Pods_TTNetworking_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTNetworking_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9807060416330C21A6A814F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E9807060416330C21A6A814F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +96,11 @@
 		607FACD21AFB9204008FA782 /* Example for TTNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				9B25150C2ED0708C00F09B13 /* Model */,
+				9B2515062ED06E7D00F09B13 /* Service */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				9B2515072ED06E7D00F09B13 /* Appdelegate+Request.swift */,
+				9B2515082ED06E7D00F09B13 /* CustomError.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -140,7 +152,6 @@
 				2E43E3DEC25420CAE7F1055B /* Pods-TTNetworking_Example.debug.xcconfig */,
 				650E466E752C8C3673238442 /* Pods-TTNetworking_Example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -150,6 +161,22 @@
 				E36112952DE90EF5DF4067A5 /* Pods_TTNetworking_Example.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B2515062ED06E7D00F09B13 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9B2515052ED06E7D00F09B13 /* DemoService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9B25150C2ED0708C00F09B13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B25150D2ED070B500F09B13 /* DemoSmartCodableModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +191,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				B2D2E26FBBE44BB55C32D597 /* [CP] Embed Pods Frameworks */,
+				0F65DFB381E6E93DC49E0ED4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,6 +282,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F65DFB381E6E93DC49E0ED4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTNetworking_Example/Pods-TTNetworking_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/TTNetworking/TTNetworking.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TTNetworking.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TTNetworking_Example/Pods-TTNetworking_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1F0FC4B71DA6682194506969 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,11 +329,23 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TTNetworking_Example/Pods-TTNetworking_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/TTNetworking/TTNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SmartCodable/SmartCodable.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SmartCodable.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -301,6 +359,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2515092ED06E7D00F09B13 /* Appdelegate+Request.swift in Sources */,
+				9B25150A2ED06E7D00F09B13 /* CustomError.swift in Sources */,
+				9B25150B2ED06E7D00F09B13 /* DemoService.swift in Sources */,
+				9B25150E2ED070B500F09B13 /* DemoSmartCodableModel.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
